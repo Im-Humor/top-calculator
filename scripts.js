@@ -15,7 +15,7 @@ function divide(num1, num2) {
 }
 
 function operate(operator, num1, num2) {
-    newVal = 0;
+    let newVal = 0;
     switch (operator) {
         case "+":
             newVal = add(num1, num2);
@@ -33,8 +33,19 @@ function operate(operator, num1, num2) {
     return newVal;
 }
 
-numChoice1 = 0;
-numChoice2 = 0;
-opChoice = "";
-displayVal = 0;
+let numChoice1 = 0;
+let numChoice2 = 0;
+let opChoice = "";
+let displayVal = 0;
+let buttonPresses = 0;
 
+
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener("click", () => {
+    //here we can put the logic for what needs to happen after a click
+    //might be good to institute "clickCount" to show number of clicks,
+    //and ensure user clicks number, operator, number, equals, in that order
+    let display = document.querySelector("#display-frame");
+    display.textContent = button.textContent;
+}))
